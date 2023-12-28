@@ -42,7 +42,7 @@ public class KodakCommand extends Command {
 
         if (args.length == 1) {
             if (args[0].equalsIgnoreCase("help")) {
-                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Kodak usage: /kodak (toggles on and off), /kodak distance <distance> (default: 4), /kodak reset (resets camera distance to default)"));
+                Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Kodak usage: /kodak (toggles on and off), /kodak distance <distance> (default: 4), /kodak reset (resets camera distance to default), /kodak help (shows this message)"));
             }
         }
 
