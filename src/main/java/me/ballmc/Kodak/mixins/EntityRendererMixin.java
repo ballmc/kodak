@@ -21,8 +21,15 @@ import net.minecraft.util.Vec3;
 import net.minecraft.block.Block;
 import net.minecraft.util.ChatComponentText;
 
+import me.ballmc.Kodak.Kodak;
+import me.ballmc.Kodak.Config;
+
+
 @Mixin(EntityRenderer.class)
 public abstract class EntityRendererMixin {
+  Kodak kodak = Kodak.getInstance();
+  Config config = kodak.getConfig();
+
   @Shadow
   private boolean cloudFog;
   private float thirdPersonDistanceTemp = 4.0F;
@@ -110,8 +117,15 @@ public abstract class EntityRendererMixin {
 
                 GlStateManager.rotate(entity.rotationPitch - f2, 1.0F, 0.0F, 0.0F);
                 GlStateManager.rotate(entity.rotationYaw - f1, 0.0F, 1.0F, 0.0F);
-                // hardcoded translate value
-                GlStateManager.translate(0.0F, 0.0F, (float)(-4.0D));
+
+                // KODAK CODE
+                if (config.KodakEnabled) {
+                    GlStateManager.translate(0.0F, 0.0F, (float)(config.KodakDistance * -1));
+                } else {
+                    GlStateManager.translate(0.0F, 0.0F, (float)(-d3));
+                }
+                // END KODAK CODE
+
                 GlStateManager.rotate(f1 - entity.rotationYaw, 0.0F, 1.0F, 0.0F);
                 GlStateManager.rotate(f2 - entity.rotationPitch, 1.0F, 0.0F, 0.0F);
             }
