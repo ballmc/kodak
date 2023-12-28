@@ -4,8 +4,5 @@
   ],
   "entrypoints": [
     "me.ballmc.Kodak.Main"
-  ],
-  "hooks": [
-    "me.ballmc.Kodak.hook.MinecraftHook"
   ]
 }
