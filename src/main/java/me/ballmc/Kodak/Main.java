@@ -7,9 +7,6 @@ import me.ballmc.Kodak.command.KodakCommand;
 
 
 public class Main implements ModInitializer {
-    public static boolean KodakEnabled = true;
-    public static Double KodakDistance = 4.0D;
-
     @Override
     public void preInit() {
         System.out.println("Initializing Kodak!");
