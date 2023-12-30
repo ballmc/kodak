@@ -2,6 +2,6 @@
   "compatibilityLevel": "JAVA_8",
   "package": "me.ballmc.Kodak.mixins",
   "mixins": [
-    "erm"
+    "EntityRendererMixin"
   ]
 }

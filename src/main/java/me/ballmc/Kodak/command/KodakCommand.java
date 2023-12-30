@@ -55,15 +55,18 @@ public class KodakCommand extends Command {
         if (args.length >= 2) {
             if (args[0].equalsIgnoreCase("distance")) {
                 try {
-                    if (config.KodakDistance < 1 || config.KodakDistance > 10) {
+                    double newDistance = Double.parseDouble(args[1]);
+        
+                    if (newDistance < 1 || newDistance > 10 || Math.abs(newDistance - Math.round(newDistance)) > 0.0001) {
                         setDistance(4.0D);
-                        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Distance must be between 1 and 10! Kodak distance has been reset to default."));
-                    } 
-                    setDistance(Double.parseDouble(args[1]));
+                        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Distance must be a whole number between 1 and 10! Kodak distance has been reset to default."));
+                    } else {
+                        setDistance(newDistance);
+                    }
                 } catch (NumberFormatException e) {
                     Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Invalid distance value! Please provide a valid number between 1 and 10."));
                 }
             }
-        }
+        }        
     }
 }
