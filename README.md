@@ -1,4 +1,6 @@
-# Kodak Camera Mod usage: 
+# Kodak <img alt="downloadcount" src="https://img.shields.io/github/downloads/ballmc/kodak/total?color=990ecc&style=for-the-badge" />
+
+## Kodak Camera Mod usage: 
 
 ## /kodak 
 
